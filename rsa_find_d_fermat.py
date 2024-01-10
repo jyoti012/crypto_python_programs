@@ -61,3 +61,31 @@ print('d = ', d)
 print('Public Key (e, n) = ', (e, n))
 # Private Key (d,n)
 print('Private Key (d,n)', (d, n))
+
+# Given composite number 'n' to factor
+n1 = 1050589
+
+
+# Function to perform Fermat's factorization
+def fermat_factorization_1(n):
+	s = int(math.isqrt(n))  # Initialize s as the integer square root of n
+
+	while True:
+		t_squared = s * s - n  # Calculate t^2 - n
+
+		if t_squared >= 0:
+			t = int(math.isqrt(t_squared))  # Calculate the square root of t_squared
+
+			if t * t == t_squared:
+				p = s + t
+				q = s - t
+				return p, q
+
+		s += 1  # Increment s and continue
+
+
+# Perform Fermat's factorization
+p, q = fermat_factorization_1(n1)
+
+print("Factor 1 (p):", p)
+print("Factor 2 (q):", q)

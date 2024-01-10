@@ -25,7 +25,7 @@ def main():
 	print('n = ', n)
 	# Step 3: Calculate Euler's totient function ϕ(n) = (p - 1) * (q - 1)
 	z = (p - 1) * (q - 1)
-	print("the value of z =", z)  # Printing the value of ϕ(n)
+	print("the value of ϕ(n) =", z)  # Printing the value of ϕ(n)
 
 	# Step 4: Find public key exponent e
 	for e in range(2, z + 1):
